@@ -18,6 +18,12 @@ int		ft_strlen(const char *s);
 char	*ft_strstr(char *str, char *to_find);
 char	**get_path(void);
 char	*substr(const char *s, unsigned int start, int len);
-char	**checkaccess(int argc, char *argv[], char **path);
+char	*checkaccess(char *cmd, char **path);
+char	***cmdopt(int argc, char *argv[]);
+char	*returnpath(char *cmd, char **path);
+char	**getcmdpath(char ***cmd, char **path, int argc);
+void	execute(int argc, char *argv[], char ***cmd, char **cmdpath);
+void	runfirst(char *argv[], int fd[], char *cmd, char **cmdpath);
+void	runlast(char *argv[], int fd[], char *cmd, char **cmdpath);
 
 #endif
