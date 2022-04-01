@@ -32,5 +32,6 @@ char    **getcmdpath(char ***cmd, char **path, int argc);
 void	execute(char *argv[], t_data data);
 void	runfirst(char *argv[], int fd[], char *cmdpath, char **cmd);
 void	runlast(char *argv[], int fd[], char *cmdpath, char **cmd);
+void	run(int fd[], char *cmdpath, char **cmd);
 
 #endif
