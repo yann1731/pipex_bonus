@@ -1,9 +1,9 @@
 #include "pipex_bonus.h"
 
-void	execute(int argc, char *argv[], char ***cmd, char **cmdpath)
+void	execute(char *argv[], t_data data)
 {
 	int	count;
 
-	count = argc - 3;
+	count = data.argc - 3;
 	
 }

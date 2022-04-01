@@ -2,13 +2,13 @@
 
 int	main(int argc, char *argv[])
 {
-	char	**path;
-	char	***cmd;
-	char	**cmdpath;
+	t_data data;
 
 	checkargs(argc);
-	path = get_path();
-	cmd = cmdopt(argc, argv);
-	cmdpath = getcmdpath(cmd, path, argc);
+	data.argc = argc;
+	data.path = get_path();
+	data.cmd = cmdopt(argc, argv);
+	data.cmdpath = getcmdpath(data.cmd, data.path, data.argc);
+	execute(argv, data);
 	return (0);
 }

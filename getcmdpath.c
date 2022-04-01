@@ -1,6 +1,6 @@
 #include "pipex_bonus.h"
 
-char **getcmdpath(char ***cmd, char **path, int argc)
+char    **getcmdpath(char ***cmd, char **path, int argc)
 {
 	char	**cmdpath;
 	int		count;

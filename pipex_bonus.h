@@ -8,6 +8,14 @@
 # include <sys/wait.h>
 # include <stdio.h>
 
+typedef struct s_data
+{
+	char	***cmd;
+	char	**cmdpath;
+	char	**path;
+	int		argc;
+}	t_data;
+
 void	checkargs(int argc);
 void	checkoutput(int output);
 char	*findpath(char **environ);
@@ -20,10 +28,9 @@ char	**get_path(void);
 char	*substr(const char *s, unsigned int start, int len);
 char	*checkaccess(char *cmd, char **path);
 char	***cmdopt(int argc, char *argv[]);
-char	*returnpath(char *cmd, char **path);
-char	**getcmdpath(char ***cmd, char **path, int argc);
-void	execute(int argc, char *argv[], char ***cmd, char **cmdpath);
-void	runfirst(char *argv[], int fd[], char *cmd, char **cmdpath);
-void	runlast(char *argv[], int fd[], char *cmd, char **cmdpath);
+char    **getcmdpath(char ***cmd, char **path, int argc);
+void	execute(char *argv[], t_data data);
+void	runfirst(char *argv[], int fd[], char *cmdpath, char **cmd);
+void	runlast(char *argv[], int fd[], char *cmdpath, char **cmd);
 
 #endif

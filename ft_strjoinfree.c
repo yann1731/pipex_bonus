@@ -17,7 +17,7 @@ static int	ft_strlcpy(char *dst, const char *src, int dstsize)
 		dst[cd] = src[cd];
 		cd++;
 	}
-	if (dstsize != 0)
+	if (dstsize > 0)
 		dst[cd] = '\0';
 	cd = 0;
 	while (src[cd])

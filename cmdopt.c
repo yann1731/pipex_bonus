@@ -11,9 +11,13 @@ char	***cmdopt(int argc, char *argv[])
 	start = 0;
 	i = 2;
 	cmd = malloc((count + 1) * sizeof(char **));
+	if (cmd == NULL)
+		return (NULL);
 	while (count > 0)
 	{
 		cmd[start] = ft_split(argv[i], ' ');
+		if (cmd[start] == NULL)
+			return (NULL);
 		count--;
 		i++;
 		start++;

@@ -1,6 +1,6 @@
 #include "pipex_bonus.h"
 
-void	runfirst(char *argv[], int fd[], char *cmd, char **cmdpath)
+void	runfirst(char *argv[], int fd[], char *cmdpath, char **cmd)
 {
 	int	fd1;
 	char **env;

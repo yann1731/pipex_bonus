@@ -1,6 +1,6 @@
 #include "pipex_bonus.h"
 
-void	runlast(char *argv[], int fd[], char *cmd, char **cmdpath)
+void	runlast(char *argv[], int fd[], char *cmdpath, char **cmd)
 {
 	int		fd1;
 	int		lastarg;
