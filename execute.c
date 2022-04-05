@@ -9,10 +9,10 @@ void	execute(char *argv[], t_data data)
 	fd[0] = open(argv[1], O_RDONLY);
 	dup2(fd[0], STDIN_FILENO);
 	close(fd[0]);
+	while (++i < data.argc - 4)
+		rundir(data.cmdpath[i], data.cmd[i]);
 	fd[1] = open(argv[data.argc - 1], O_WRONLY);
 	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);
-	while (++i < data.argc - 3)
-		rundir(data.cmdpath[i], data.cmd[i]);
-
+	run(data.cmdpath[i], data.cmd[i]);
 }
