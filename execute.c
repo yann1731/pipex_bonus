@@ -2,28 +2,17 @@
 
 void	execute(char *argv[], t_data data)
 {
-	int	count;
-    int	pid;
-    int fd[2];
+	int	fd[2];
 	int i;
 
-    checkoutput((pipe(fd)));
-	count = data.argc - 5;
-	i = 0;
-	pid = fork();
-	if (pid == 0)
-		runfirst(argv, fd, data.cmdpath[i], data.cmd[i]);
-	while (count-- > 0)
-	{
-		i++;
-		pid = fork();
-		if (pid == 0)
-			run(fd, data.cmdpath[i], data.cmd[i]);
-	}
-	i++;
-	pid = fork();
-	if (pid == 0)
-		runlast(argv, fd, data.cmdpath[i], data.cmd[i]);
+	i = -1;
+	fd[0] = open(argv[1], O_RDONLY);
+	dup2(fd[0], STDIN_FILENO);
 	close(fd[0]);
+	fd[1] = open(argv[data.argc - 1], O_WRONLY);
+	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);
+	while (++i < data.argc - 3)
+		rundir(data.cmdpath[i], data.cmd[i]);
+
 }
