@@ -1,5 +1,7 @@
 #ifndef PIPEX_BONUS_H
 # define PIPEX_BONUS_H
+# define DELIMITER argv[2]
+# define HERE_DOC argv[1]
 
 # include <errno.h>
 # include <unistd.h>
@@ -7,6 +9,7 @@
 # include <fcntl.h>
 # include <sys/wait.h>
 # include <stdio.h>
+# include "libft/libft.h"
 
 typedef struct s_data
 {
@@ -34,5 +37,6 @@ void	runfirst(char *argv[], int fd[], char *cmdpath, char **cmd);
 void	runlast(char *argv[], int fd[], char *cmdpath, char **cmd);
 void	run(char *cmdpath, char **cmd);
 void	rundir(char *cmdpath, char **cmd);
+void	handle_here_doc(char *argv[], t_data data);
 
 #endif
