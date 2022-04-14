@@ -38,5 +38,9 @@ void	runlast(char *argv[], int fd[], char *cmdpath, char **cmd);
 void	run(char *cmdpath, char **cmd);
 void	rundir(char *cmdpath, char **cmd);
 void	handle_here_doc(char *argv[], t_data data);
+char	***cmdopthd(int argc, char *argv[]);
+char    **getcmdpathhd(char ***cmd, char **path, int argc);
+void	readuntildelim(char *argv[], int fd[]);
+void	runhd(char *cmdpath, char **cmd, int fd[]);
 
 #endif

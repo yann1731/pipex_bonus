@@ -6,9 +6,7 @@ void	execute(char *argv[], t_data data)
 	int i;
 
 	if (ft_strnstrint(HERE_DOC, "here_doc", ft_strlen(HERE_DOC)) == 1)
-	{
 		handle_here_doc(argv, data);
-	}
 	else
 	{
 		i = -1;

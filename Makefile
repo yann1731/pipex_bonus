@@ -1,25 +1,38 @@
-SCRS =		checkargs.c checkoutput.c findpath.c ft_split.c ft_strjoin.c ft_strjoinfree.c ft_strlen.c \
-			ft_strstr.c get_path.c main.c substr.c checkaccess.c cmdopt.c getcmdpath.c execute.c runfirst.c \
-			runlast.c run.c rundir.c
+SCRS =		checkargs.c checkoutput.c findpath.c ft_strstr.c readuntildelim.c \
+			get_path.c main.c checkaccess.c cmdopt.c getcmdpath.c execute.c runfirst.c \
+			runlast.c run.c rundir.c handle_here_doc.c cmdopthd.c getcmdpathhd.c
 
 OBJS =		${SCRS:.c=.o}
 
 CC =		gcc
 
+LIBFT =		libft.a
+
+LIBFTPATH =	libft/
+
 CFLAGS =	-Wall -Wextra -Werror
 
 RM =		rm -f
 
+NAME =		pipex
+
+all:		${NAME}
+
 .c.o:
-			${CC} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-all:		${OBJS}
-			${CC} ${OBJS}
+${NAME}:	${OBJS} ${LIBFT}
+			${CC} ${CFLAGS} ${OBJS} ${LIBFTPATH}${LIBFT} -o ${NAME}
 
+${LIBFT}:
+			make -C ${LIBFTPATH} all
 clean:
 			${RM} ${OBJS}
+			make -C ${LIBFTPATH} clean
+
 fclean:		clean
-			${RM} a.out
+			${RM} ${NAME} ${LIBFTPATH}${LIBFT}
+
 re: clean all
 
 .PHONY: all clean fclean re
