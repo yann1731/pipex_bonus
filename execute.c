@@ -20,13 +20,7 @@ void	execute(char *argv[], t_data data)
 			while (++i < data.argc - 4)
 				rundir(data.cmdpath[i], data.cmd[i]);
 		if (fd[0] == -1)
-		{
-			perror("Error");
-			i = 0;
-			redir(fd);
-			while (++i < data.argc - 4)
-				rundir(data.cmdpath[i], data.cmd[i]);
-		}
+			handle_no_infile(data, &i, fd);
 		fd[1] = open(argv[data.argc - 1], O_WRONLY);
 		dup2(fd[1], STDOUT_FILENO);
 		close(fd[1]);
