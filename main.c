@@ -1,5 +1,6 @@
 #include "pipex_bonus.h"
 
+//	Got to check cmdopt and getcmdpath for segfault
 int	main(int argc, char *argv[])
 {
 	t_data data;

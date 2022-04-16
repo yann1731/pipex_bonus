@@ -2,6 +2,7 @@
 # define PIPEX_BONUS_H
 # define DELIMITER argv[2]
 # define HERE_DOC argv[1]
+# define INFILE argv[1]
 
 # include <errno.h>
 # include <unistd.h>
@@ -42,5 +43,6 @@ char	***cmdopthd(int argc, char *argv[]);
 char    **getcmdpathhd(char ***cmd, char **path, int argc);
 void	readuntildelim(char *argv[], int fd[]);
 void	runhd(char *cmdpath, char **cmd, int fd[]);
+void	redir(int fd[]);
 
 #endif

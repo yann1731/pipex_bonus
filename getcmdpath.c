@@ -12,8 +12,6 @@ char    **getcmdpath(char ***cmd, char **path, int argc)
 	while (cmd[i])
 	{
 		cmdpath[i] = checkaccess(cmd[i][0], path);
-		if (cmdpath[i] == NULL)
-			return (NULL);
 		i++;
 	}
 	cmdpath[count] = NULL;
