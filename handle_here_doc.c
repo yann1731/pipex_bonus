@@ -15,7 +15,7 @@ void	handle_here_doc(char *argv[], t_data data)
 	close(fd[0]);
 	rundir(data.cmdpath[i], data.cmd[i]);
 	i++;
-	fd[1] = open(argv[data.argc - 1], O_WRONLY | O_APPEND);
+	fd[1] = open(argv[data.argc - 1], O_WRONLY | O_APPEND | O_CREAT, 0777);
 	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);
 	run(data.cmdpath[i], data.cmd[i]);
