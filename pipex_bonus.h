@@ -45,5 +45,6 @@ void	readuntildelim(char *argv[], int fd[]);
 void	runhd(char *cmdpath, char **cmd, int fd[]);
 void	redir(int fd[], int *i);
 void	handle_no_infile(t_data data, int *i, int fd[]);
+int		checkdelim(const char *haystack, const char *needle);
 
 #endif

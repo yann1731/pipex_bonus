@@ -5,7 +5,7 @@ void	execute(char *argv[], t_data data)
 	int	fd[2];
 	int i;
 
-	if (ft_strnstrint(HERE_DOC, DELIMITER, ft_strlen(HERE_DOC)) == 1)
+	if (ft_strnstrint(HERE_DOC, "here_doc", ft_strlen(HERE_DOC)) == 1)
 		handle_here_doc(argv, data);
 	else
 	{

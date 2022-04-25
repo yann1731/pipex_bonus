@@ -1,7 +1,7 @@
 SCRS =		checkargs.c checkoutput.c findpath.c ft_strstr.c readuntildelim.c \
 			get_path.c main.c checkaccess.c cmdopt.c getcmdpath.c execute.c runfirst.c \
 			runlast.c run.c rundir.c handle_here_doc.c cmdopthd.c getcmdpathhd.c \
-			redir.c handle_no_infile.c
+			redir.c handle_no_infile.c checkdelim.c
 
 OBJS =		${SCRS:.c=.o}
 
@@ -11,7 +11,7 @@ LIBFT =		libft.a
 
 LIBFTPATH =	libft/
 
-CFLAGS =	-Wall -Wextra -Werror
+CFLAGS =	-Wall -Wextra -Werror -g
 
 RM =		rm -f
 
@@ -20,7 +20,7 @@ NAME =		pipex
 all:		${NAME}
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS} ${LIBFT}
 			${CC} ${CFLAGS} ${OBJS} ${LIBFTPATH}${LIBFT} -o ${NAME}
