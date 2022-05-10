@@ -34,17 +34,19 @@ char	*checkaccess(char *cmd, char **path);
 char	***cmdopt(int argc, char *argv[]);
 char    **getcmdpath(char ***cmd, char **path, int argc);
 void	execute(char *argv[], t_data data);
-void	runfirst(char *argv[], int fd[], char *cmdpath, char **cmd);
-void	runlast(char *argv[], int fd[], char *cmdpath, char **cmd);
 void	run(char *cmdpath, char **cmd);
 void	rundir(char *cmdpath, char **cmd);
 void	handle_here_doc(char *argv[], t_data data);
 char	***cmdopthd(int argc, char *argv[]);
 char    **getcmdpathhd(char ***cmd, char **path, int argc);
-void	readuntildelim(char *argv[], int fd[]);
+void	readuntildelim(char *delimiter);
 void	runhd(char *cmdpath, char **cmd, int fd[]);
 void	redir(int fd[], int *i);
 void	handle_no_infile(t_data data, int *i, int fd[]);
 int		checkdelim(const char *haystack, const char *needle);
+void	error(void);
+void	memfreecmd(char ***cmd);
+void	memfreecmdpath(char **cmdpath);
+void	rundirhd(char *cmdpath, char **cmd, int fd[]);
 
 #endif
