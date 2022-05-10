@@ -8,7 +8,7 @@ char	*findpath(char **environ)
 	i = -1;
 	while (environ[++i])
 	{
-		ptr = ft_strstr(environ[i], "PATH=");
+		ptr = ft_strnstr(environ[i], "PATH=", ft_strlen("PATH="));
 		if (ptr != NULL)
 			return (ptr + 5);
 	}
