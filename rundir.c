@@ -1,6 +1,6 @@
 #include "pipex_bonus.h"
 
-void	rundir(char *cmdpath, char **cmd)
+void	rundir(char *cmdpath, char **cmd, t_data data)
 {
 	int pid;
 	int fd[2];
@@ -19,7 +19,7 @@ void	rundir(char *cmdpath, char **cmd)
 		close(fd[0]);
 		dup2(fd[1], STDOUT_FILENO);
 		close(fd[1]);
-		run(cmdpath, cmd);
+		run(cmdpath, cmd, data);
 	}
 }
 

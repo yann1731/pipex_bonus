@@ -14,13 +14,11 @@ void    handle_in_out(char *argv[], t_data data)
 	}
 	if (fd[0] != -1)
 		while (++i < data.argc - 4)
-			rundir(data.cmdpath[i], data.cmd[i]);
+			rundir(data.cmdpath[i], data.cmd[i], data);
 	if (fd[0] == -1)
 		handle_no_infile(data, &i, fd);
 	fd[1] = open(argv[data.argc - 1], O_WRONLY | O_CREAT, 0777);
 	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);
-	run(data.cmdpath[i], data.cmd[i]);
-    freecmd(data.cmd);
-    freesplit(data.cmdpath);
+	run(data.cmdpath[i], data.cmd[i], data);
 }

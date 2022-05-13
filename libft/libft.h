@@ -16,6 +16,7 @@
 # include	<stdlib.h>
 # include	<stdarg.h>
 # define	BUFFER_SIZE 1
+# define	new mynew
 
 typedef struct s_flags
 {

@@ -17,7 +17,7 @@ char	***cmdopt(int argc, char *argv[])
 	{
 		cmd[start] = ft_split(argv[i], ' ');
 		if (cmd[start] == NULL)
-			memfreecmd(cmd);
+			cmd[start] = malloc(sizeof(char **));
 		count--;
 		i++;
 		start++;

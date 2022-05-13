@@ -19,6 +19,5 @@ int	main(int argc, char *argv[])
 	}
 	freesplit(data.path);
 	execute(argv, data);
-	freeall(data);
 	return (0);
 }

@@ -1,11 +1,9 @@
 #include "pipex_bonus.h"
 
-void	redir(int fd[], int *i)
+void	redir(int fd[])
 {
-	*i = 0;
 	checkoutput(pipe(fd));
 	dup2(fd[0], STDIN_FILENO);
 	close(fd[0]);
 	close(fd[1]);
-	*i = -1;
 }
