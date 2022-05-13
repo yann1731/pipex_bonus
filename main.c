@@ -17,6 +17,8 @@ int	main(int argc, char *argv[])
 		data.cmd = cmdopthd(argc, argv);
 		data.cmdpath = getcmdpathhd(data.cmd, data.path, argc);
 	}
+	freesplit(data.path);
 	execute(argv, data);
+	freeall(data);
 	return (0);
 }

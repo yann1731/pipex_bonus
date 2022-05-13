@@ -48,5 +48,10 @@ void	error(void);
 void	memfreecmd(char ***cmd);
 void	memfreecmdpath(char **cmdpath);
 void	rundirhd(char *cmdpath, char **cmd, int fd[]);
+void    handle_in_out(char *argv[], t_data data);
+void    memfreeall(t_data data);
+void    freeall(t_data data);
+void    freecmd(char ***cmd);
+void    freesplit(char **split);
 
 #endif
