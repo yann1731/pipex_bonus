@@ -15,7 +15,7 @@ char    **getcmdpathhd(char ***cmd, char **path, int argc)
 	{
 		cmdpath[i] = checkaccess(cmd[i][0], path);
 		if (cmdpath[i] == NULL)
-			memfreecmdpath(cmdpath);
+			cmdpath[i] = ft_strdup("");
 		i++;
 	}
 	cmdpath[count] = NULL;

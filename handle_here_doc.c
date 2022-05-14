@@ -11,12 +11,13 @@ void	handle_here_doc(char *argv[], t_data data)
 
 	i = 0;
 	delimiter = ft_strjoin(DELIMITER, "\n");
+	dprintf(STDERR_FILENO, "Entering readuntildelim\n");
 	readuntildelim(delimiter);
 	free(delimiter);
-	rundir(data.cmdpath[i], data.cmd[i]);
+	rundir(data.cmdpath[i], data.cmd[i], data);
 	i++;
 	fd1 = open(argv[data.argc - 1], O_WRONLY | O_APPEND | O_CREAT, 0777);
 	dup2(fd1, STDOUT_FILENO);
 	close(fd1);
-	run(data.cmdpath[i], data.cmd[i]);
+	run(data.cmdpath[i], data.cmd[i], data);
 }
