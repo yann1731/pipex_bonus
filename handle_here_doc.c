@@ -11,7 +11,6 @@ void	handle_here_doc(char *argv[], t_data data)
 
 	i = 0;
 	delimiter = ft_strjoin(DELIMITER, "\n");
-	dprintf(STDERR_FILENO, "Entering readuntildelim\n");
 	readuntildelim(delimiter);
 	free(delimiter);
 	rundir(data.cmdpath[i], data.cmd[i], data);
