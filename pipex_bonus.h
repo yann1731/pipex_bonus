@@ -11,6 +11,7 @@
 # include <sys/wait.h>
 # include <stdio.h>
 # include "libft/libft.h"
+# include <paths.h>
 
 typedef struct s_data
 {

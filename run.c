@@ -6,8 +6,8 @@ void	run(char *cmdpath, char **cmd, t_data data)
 
 	env = NULL;
 	execve(cmdpath, cmd, env);
-	perror("Error");
+	ft_putstr_fd("command not found", STDERR_FILENO);
 	freeall(data);
-	exit(-1);
+	exit(1);
 }
 
