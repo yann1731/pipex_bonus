@@ -8,7 +8,7 @@ int	checkdelim(const char *haystack, const char *needle)
 	if (!haystack)
 	{
 		ft_putstr_fd("Enter a valid delimiter\n", STDERR_FILENO);
-		exit(-1);
+		exit(1);
 	}
 	while (haystack[++i])
 		if (haystack[i] != needle[i])

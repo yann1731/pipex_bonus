@@ -17,7 +17,7 @@ void    handle_in_out(char *argv[], t_data data)
 			rundir(data.cmdpath[i], data.cmd[i], data);
 	if (fd[0] == -1)
 		handle_no_infile(data, &i, fd);
-	fd[1] = open(argv[data.argc - 1], O_WRONLY | O_CREAT, 0777);
+	fd[1] = open(argv[data.argc - 1], O_WRONLY | O_TRUNC | O_CREAT, 0777);
 	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);
 	run(data.cmdpath[i], data.cmd[i], data);

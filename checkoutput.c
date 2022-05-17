@@ -5,6 +5,6 @@ void	checkoutput(int output)
 	if (output == -1)
 	{
 		perror("Error");
-		exit(-1);
+		exit(1);
 	}
 }

@@ -20,6 +20,8 @@ NAME =		pipex
 
 all:		${NAME}
 
+bonus:		all
+
 .c.o:
 			${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
 
