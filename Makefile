@@ -30,6 +30,12 @@ ${NAME}:	${OBJS} ${LIBFT}
 
 ${LIBFT}:
 			make -C ${LIBFTPATH} all
+
+push:
+			git add *.c *.h Makefile
+			git commit -m "let's go"
+			git push origin master
+
 clean:
 			${RM} ${OBJS}
 			make -C ${LIBFTPATH} clean
