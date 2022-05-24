@@ -62,5 +62,6 @@ char    *gnl(void)
 		read(STDIN_FILENO, buf, 1);
 		str = strjoinfree(str, buf);
 	}
+	free(buf);
 	return (str);
 }
