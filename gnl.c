@@ -10,7 +10,7 @@ static int	total_str_len(char *s1, char *s2)
 	return (total_len);
 }
 
-char *re_alloc(int c, size_t len, char *tofree)
+static char *re_alloc(int c, size_t len, char *tofree)
 {
 	char *rstr;
 	size_t			cd;
@@ -39,7 +39,7 @@ static char	*strjoinfree(char *s1, char *s2)
 		return (s2);
 	if (!s2)
 		return (s1);
-	ns = malloc((total_str_len(s1, s2) + 1) * sizeof(char));
+	//ns = malloc((total_str_len(s1, s2) + 1) * sizeof(char));
 	if (ns == NULL)
 		return (NULL);
 	ns = ft_strdup(s1);
