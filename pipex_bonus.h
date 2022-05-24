@@ -18,6 +18,7 @@ typedef struct s_data
 	char	***cmd;
 	char	**cmdpath;
 	char	**path;
+	char	**argv;
 	int		argc;
 }	t_data;
 

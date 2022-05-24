@@ -4,8 +4,9 @@ char	**get_path(void)
 {
 	char		*path_env;
 	char		**paths;
+	extern char	**environ;
 
-	path_env = _PATH_STDPATH;
+	path_env = findpath(environ);
 	if (path_env == NULL)
 	{
 		perror("Error");
