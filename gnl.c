@@ -39,10 +39,10 @@ static char	*strjoinfree(char *s1, char *s2)
 		return (s2);
 	if (!s2)
 		return (s1);
-	//ns = malloc((total_str_len(s1, s2) + 1) * sizeof(char));
+	ns = malloc((total_str_len(s1, s2) + 1) * sizeof(char));
 	if (ns == NULL)
 		return (NULL);
-	ns = ft_strdup(s1);
+	ft_strlcpy(ns, s1, total_str_len(s1, s2) + 1);
 	ft_strlcat(ns, s2, total_str_len(s1, s2) + 1);
 	free(s1);
 	return (ns);
