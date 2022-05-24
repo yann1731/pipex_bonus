@@ -195,5 +195,3 @@ diff wtf wtf2
 printf "\n******************************\n\n"
 
 rm -f wtf wtf2
-
-sleep 3
