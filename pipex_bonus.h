@@ -53,6 +53,6 @@ void    freeall(t_data data);
 void    freecmd(char ***cmd);
 void    freesplit(char **split);
 char	*gnl(void);
-char	*ft_charjoinfree(char *s1, char c);
+char	*ft_charjoinfree(char *s1, char c, int i);
 
 #endif

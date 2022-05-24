@@ -11,21 +11,6 @@ char	*ft_charjoinfree(char *s1, char c)
 	return (ns);
 }
 
-int	stdlen(void)
-{
-	int		i;
-	char	c;
-
-	i = 0;
-	while (read(STDIN_FILENO, &c, 1) > 0)
-	{
-		i++;
-		if (c == '\n')
-			break ;
-	}
-	return (i);
-}
-
 char    *gnl(void)
 {
 	char    buf;
@@ -33,7 +18,7 @@ char    *gnl(void)
 	int		i;
 
 	i = 0;
-	str = malloc(10 * sizeof(char));
+	str = malloc(2 * sizeof(char));
 	while (read(STDIN_FILENO, &buf, 1) > 0)
 	{
 		str[i] = buf;
