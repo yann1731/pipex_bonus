@@ -11,7 +11,7 @@ void	readuntildelim(char *delimiter)
 	close(fd[1]);
 	while (1)
 	{
-		buf = get_next_line(STDIN_FILENO);
+		buf = gnl();
 		if (ft_strncmp(buf, delimiter, ft_strlen(buf)) == 0)
 			break ;
 		write(STDOUT_FILENO, buf, ft_strlen(buf));
