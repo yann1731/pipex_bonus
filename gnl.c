@@ -56,9 +56,9 @@ char    *gnl(void)
 	buf = malloc(2 * sizeof(char));
 	str = malloc(2 * sizeof(char));
 	str = re_alloc('\0', 2, str);
+	buf = re_alloc('\0', 2, buf);
 	while (buf[0] != '\n')
 	{
-		buf = re_alloc('\0', 2, buf);
 		read(STDIN_FILENO, buf, 1);
 		str = strjoinfree(str, buf);
 	}
