@@ -55,6 +55,5 @@ void    freesplit(char **split);
 char	*gnl(void);
 char	*ft_charjoinfree(char *s1, char c, int i);
 char    *get_next_line(int fd);
-char	*re_alloc(int c, size_t len, char *tofree);
 
 #endif
