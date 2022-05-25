@@ -43,7 +43,6 @@ void	readuntildelim(char *delimiter);
 void	runhd(char *cmdpath, char **cmd, int fd[]);
 void	redir(int fd[]);
 void	handle_no_infile(t_data data, int *i, int fd[]);
-int		checkdelim(const char *haystack, const char *needle);
 void	error(void);
 void	memfreecmd(char ***cmd);
 void	memfreecmdpath(char **cmdpath);

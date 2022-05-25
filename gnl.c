@@ -36,9 +36,9 @@ static char	*strjoinfree(char *s1, char *s2)
 	char		*ns;
 
 	if (!s1)
-		return (s2);
+		return ft_strdup(s2);
 	if (!s2)
-		return (s1);
+		return ft_strdup(s1);
 	ns = malloc((total_str_len(s1, s2) + 1) * sizeof(char));
 	if (ns == NULL)
 		return (NULL);
