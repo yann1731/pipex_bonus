@@ -58,5 +58,7 @@ char	*gnl(void);
 char	*ft_charjoinfree(char *s1, char c, int i);
 char    *get_next_line(int fd);
 void	procwait(t_data data);
+void	checkargshd(t_data data);
+void	procwaithd(t_data data);
 
 #endif

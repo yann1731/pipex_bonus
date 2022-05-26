@@ -10,6 +10,7 @@ void	handle_here_doc(char *argv[], t_data data)
 	char	*delimiter;
 
 	i = 0;
+	checkargshd(data);
 	delimiter = ft_strjoin(DELIMITER, "\n");
 	readuntildelim(delimiter, data);
 	free(delimiter);
