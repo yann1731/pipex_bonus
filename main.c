@@ -10,7 +10,6 @@ int	main(int argc, char *argv[])
 	data.argc = argc;
 	data.path = get_path();
 	data.argv = argv;
-	data.pid = malloc((data.argc - 3) * sizeof(int));
 	data.i = &i;
 	if (ft_strnstrint(HERE_DOC, "here_doc", ft_strlen(HERE_DOC)) == 0)
 	{
