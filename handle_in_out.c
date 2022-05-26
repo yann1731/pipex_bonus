@@ -24,4 +24,5 @@ void    handle_in_out(char *argv[], t_data data)
 	pid = fork();
 	if (pid == 0)
 		run(data.cmdpath[i], data.cmd[i], data);
+	waitpid(data.pid[0], NULL, 0);
 }

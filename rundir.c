@@ -2,19 +2,18 @@
 
 void	rundir(char *cmdpath, char **cmd, t_data data)
 {
-	int pid;
 	int fd[2];
 
 	checkoutput(pipe(fd));
-	pid = fork();
-	checkoutput(pid);
-	if (pid > 0)
+	data.pid[++data.i] = fork();
+	checkoutput(data.pid[data.i]);
+	if (data.pid[data.i] > 0)
 	{
 		close(fd[1]);
 		dup2(fd[0], STDIN_FILENO);
 		close(fd[0]);
 	}
-	if (pid == 0)
+	if (data.pid[data.i] == 0)
 	{
 		close(fd[0]);
 		dup2(fd[1], STDOUT_FILENO);

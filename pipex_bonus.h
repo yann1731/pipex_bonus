@@ -19,6 +19,8 @@ typedef struct s_data
 	char	**cmdpath;
 	char	**path;
 	char	**argv;
+	int		*pid;
+	int		i;
 	int		argc;
 }	t_data;
 
