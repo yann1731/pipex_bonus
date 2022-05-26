@@ -2,10 +2,10 @@
 
 void	execute(char *argv[], t_data data)
 {
-	if (ft_strnstrint(HERE_DOC, "here_doc", ft_strlen(HERE_DOC)) == 1)
+	if (ft_strcmp(argv[1], "here_doc") == 0)
 	{
 		data.pid = malloc((data.argc - 4) * sizeof(int));
-		handle_here_doc(argv, data);	
+		handle_here_doc(argv, data);
 	}
 	else
 	{

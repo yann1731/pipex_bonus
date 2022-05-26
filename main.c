@@ -11,7 +11,7 @@ int	main(int argc, char *argv[])
 	data.path = get_path();
 	data.argv = argv;
 	data.i = &i;
-	if (ft_strnstrint(HERE_DOC, "here_doc", ft_strlen(HERE_DOC)) == 0)
+	if (ft_strcmp(HERE_DOC, "here_doc") != 0)
 	{
 		data.cmd = cmdopt(argc, argv);
 		data.cmdpath = getcmdpath(data.cmd, data.path, data.argc);
