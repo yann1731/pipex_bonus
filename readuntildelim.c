@@ -1,11 +1,11 @@
 #include "pipex_bonus.h"
 
-void	readuntildelim(char *delimiter)
+void	readuntildelim(char *delimiter, t_data data)
 {
 	char	*buf;
 	int		fd[2];
 
-	checkoutput(pipe(fd));
+	checkoutput(pipe(fd), data);
 	ft_putstr_fd("here_doc> ", STDOUT_FILENO);
 	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);

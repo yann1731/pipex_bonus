@@ -20,12 +20,12 @@ typedef struct s_data
 	char	**path;
 	char	**argv;
 	int		*pid;
-	int		i;
+	int		*i;
 	int		argc;
 }	t_data;
 
 void	checkargs(int argc);
-void	checkoutput(int output);
+void	checkoutput(int output, t_data data);
 char	*findpath(char **environ);
 char	**ft_split(const char *s, char c);
 int		ft_strlen(const char *s);
@@ -41,9 +41,9 @@ void	rundir(char *cmdpath, char **cmd, t_data data);
 void	handle_here_doc(char *argv[], t_data data);
 char	***cmdopthd(int argc, char *argv[]);
 char    **getcmdpathhd(char ***cmd, char **path, int argc);
-void	readuntildelim(char *delimiter);
+void	readuntildelim(char *delimiter, t_data data);
 void	runhd(char *cmdpath, char **cmd, int fd[]);
-void	redir(int fd[]);
+void	redir(int fd[], t_data data);
 void	handle_no_infile(t_data data, int *i, int fd[]);
 void	error(void);
 void	memfreecmd(char ***cmd);
@@ -57,5 +57,6 @@ void    freesplit(char **split);
 char	*gnl(void);
 char	*ft_charjoinfree(char *s1, char c, int i);
 char    *get_next_line(int fd);
+void	procwait(t_data data);
 
 #endif

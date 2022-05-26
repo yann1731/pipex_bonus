@@ -4,4 +4,5 @@ void    freeall(t_data data)
 {
     freecmd(data.cmd);
     freesplit(data.cmdpath);
+    free(data.pid);
 }

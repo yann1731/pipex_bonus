@@ -4,7 +4,6 @@ void    handle_in_out(char *argv[], t_data data)
 {
     int	fd[2];
 	int i;
-	int pid;
 
     i = -1;
 	fd[0] = open(argv[1], O_RDONLY);
@@ -21,8 +20,8 @@ void    handle_in_out(char *argv[], t_data data)
 	fd[1] = open(argv[data.argc - 1], O_WRONLY | O_TRUNC | O_CREAT, 0777);
 	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);
-	pid = fork();
-	if (pid == 0)
+	data.pid[++*data.i] = fork();
+	if (data.pid[*data.i] == 0)
 		run(data.cmdpath[i], data.cmd[i], data);
-	waitpid(data.pid[0], NULL, 0);
+	procwait(data);
 }

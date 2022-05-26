@@ -2,7 +2,8 @@ SCRS =		checkargs.c checkoutput.c findpath.c ft_strstr.c readuntildelim.c \
 			get_path.c main.c checkaccess.c cmdopt.c getcmdpath.c execute.c \
 			run.c rundir.c handle_here_doc.c cmdopthd.c getcmdpathhd.c \
 			redir.c handle_no_infile.c checkdelim.c error.c \
-			handle_in_out.c freeall.c freecmd.c freesplit.c gnl.c
+			handle_in_out.c freeall.c freecmd.c freesplit.c gnl.c \
+			procwait.c
 
 OBJS =		${SCRS:.c=.o}
 
