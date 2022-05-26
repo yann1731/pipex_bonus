@@ -3,13 +3,15 @@
 int	main(int argc, char *argv[])
 {
 	t_data	data;
+	int	i;
 
+	i = -1;
 	checkargs(argc);
 	data.argc = argc;
 	data.path = get_path();
 	data.argv = argv;
 	data.pid = malloc((data.argc - 4) * sizeof(int));
-	data.i = -1;
+	data.i = &i;
 	if (ft_strnstrint(HERE_DOC, "here_doc", ft_strlen(HERE_DOC)) == 0)
 	{
 		data.cmd = cmdopt(argc, argv);
