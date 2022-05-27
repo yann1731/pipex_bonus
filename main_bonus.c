@@ -1,6 +1,6 @@
 #include "pipex_bonus.h"
 
-int	main(int argc, char *argv[])
+int	main(int argc, char *argv[], char *env[])
 {
 	t_data	data;
 	int	i;
@@ -8,7 +8,7 @@ int	main(int argc, char *argv[])
 	i = -1;
 	checkargs(argc);
 	data.argc = argc;
-	data.path = get_path();
+	data.path = get_path(env);
 	data.argv = argv;
 	data.i = &i;
 	if (ft_strcmp(HERE_DOC, "here_doc") != 0)

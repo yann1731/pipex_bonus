@@ -1,27 +1,19 @@
-#include "pipex_bonus.h"
+#include "pipex.h"
 
-int	main(int argc, char *argv[])
+int	main(int argc, char *argv[], char *env[])
 {
 	t_data	data;
 	int	i;
 
 	i = -1;
-	checkargs(argc);
+	checkargsman(argc);
 	data.argc = argc;
-	data.path = get_path();
+	data.path = get_path(env);
 	data.argv = argv;
 	data.i = &i;
-	if (ft_strcmp(HERE_DOC, "here_doc") != 0)
-	{
-		data.cmd = cmdopt(argc, argv);
-		data.cmdpath = getcmdpath(data.cmd, data.path, data.argc);
-	}
-	else
-	{
-		data.cmd = cmdopthd(argc, argv);
-		data.cmdpath = getcmdpathhd(data.cmd, data.path, argc);
-	}
+	data.cmd = cmdopt(argc, argv);
+	data.cmdpath = getcmdpath(data.cmd, data.path, data.argc);
 	freesplit(data.path);
-	execute(argv, data);
+	executeman(argv, data);
 	return (0);
 }

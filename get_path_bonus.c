@@ -1,12 +1,11 @@
 #include "pipex_bonus.h"
 
-char	**get_path(void)
+char	**get_path(char **env)
 {
 	char		*path_env;
 	char		**paths;
-	extern char	**environ;
 
-	path_env = findpath(environ);
+	path_env = findpath(env);
 	if (path_env == NULL)
 	{
 		perror("Error");

@@ -30,7 +30,7 @@ char	*findpath(char **environ);
 char	**ft_split(const char *s, char c);
 int		ft_strlen(const char *s);
 char	*ft_strstr(char *str, char *to_find);
-char	**get_path(void);
+char	**get_path(char **env);
 char	*substr(const char *s, unsigned int start, int len);
 char	*checkaccess(char *cmd, char **path);
 char	***cmdopt(int argc, char *argv[]);
