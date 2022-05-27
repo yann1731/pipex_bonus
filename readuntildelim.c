@@ -6,11 +6,11 @@ void	readuntildelim(char *delimiter, t_data data)
 	int		fd[2];
 
 	checkoutput(pipe(fd), data);
-	ft_putstr_fd("here_doc> ", STDOUT_FILENO);
 	dup2(fd[1], STDOUT_FILENO);
 	close(fd[1]);
 	while (1)
 	{
+		ft_putstr_fd("pipe heredoc> ", STDERR_FILENO);
 		buf = gnl();
 		if (ft_strncmp(buf, delimiter, ft_strlen(buf)) == 0)
 			break ;

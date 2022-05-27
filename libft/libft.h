@@ -139,5 +139,6 @@ char    *get_next_line(int fd);
 char	*ft_strjoinfree(char *s1, char *s2);
 int		ft_strchrint(const char *s, int c);
 int		ft_strnstrint(const char *haystack, const char *needle, size_t len);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif
