@@ -1,11 +1,11 @@
-SCRS =		checkargs.c checkoutput.c findpath.c ft_strstr.c readuntildelim.c \
-			get_path.c main.c checkaccess.c cmdopt.c getcmdpath.c execute.c \
-			run.c rundir.c handle_here_doc.c cmdopthd.c getcmdpathhd.c \
-			redir.c handle_no_infile.c checkdelim.c error.c \
-			handle_in_out.c freeall.c freecmd.c freesplit.c gnl.c \
-			procwait.c checkargshd.c procwaithd.c
+SCRS_B =	checkargs_bonus.c checkoutput_bonus.c findpath_bonus.c ft_strstr_bonus.c readuntildelim_bonus.c \
+			get_path_bonus.c main_bonus.c checkaccess_bonus.c cmdopt_bonus.c getcmdpath_bonus.c execute_bonus.c \
+			run_bonus.c rundir_bonus.c handle_here_doc_bonus.c cmdopthd_bonus.c getcmdpathhd_bonus.c \
+			redir_bonus.c handle_no_infile_bonus.c checkdelim_bonus.c error_bonus.c \
+			handle_in_out_bonus.c freeall_bonus.c freecmd_bonus.c freesplit_bonus.c gnl_bonus.c \
+			procwait_bonus.c checkargshd_bonus.c procwaithd_bonus.c
 
-OBJS =		${SCRS:.c=.o}
+OBJS_B =	${SCRS_B:.c=.o}
 
 CC =		gcc
 
@@ -21,7 +21,8 @@ NAME =		pipex
 
 all:		${NAME}
 
-bonus:		all
+bonus:		${OBJS_B} ${LIBFT}
+			@${CC} ${CFLAGS} ${OBJS_B} ${LIBFTPATH}${LIBFT} -o ${NAME}
 
 .c.o:
 			${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
@@ -42,7 +43,7 @@ clean:
 			make -C ${LIBFTPATH} clean
 
 fclean:		clean
-			${RM} ${NAME} ${LIBFTPATH}${LIBFT}
+			${RM} ${NAME} ${LIBFTPATH}${LIBFT} ${OBJS_B}
 
 re: clean all
 
