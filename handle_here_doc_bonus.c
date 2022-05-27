@@ -1,7 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_here_doc_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yst-laur <yst-laur@student.42quebec.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/27 13:02:43 by yst-laur          #+#    #+#             */
+/*   Updated: 2022/05/27 13:02:53 by yst-laur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "pipex_bonus.h"
-
-//  ./pipex here_doc LIMITER cmd cmd1 file
-//	Should behave like cmd << DELIMITER | cmd1 >> file
 
 void	handle_here_doc(char *argv[], t_data data)
 {
@@ -11,7 +19,7 @@ void	handle_here_doc(char *argv[], t_data data)
 
 	i = 0;
 	checkargshd(data);
-	delimiter = ft_strjoin(DELIMITER, "\n");
+	delimiter = ft_strjoin(argv[2], "\n");
 	readuntildelim(delimiter, data);
 	free(delimiter);
 	rundir(data.cmdpath[i], data.cmd[i], data);

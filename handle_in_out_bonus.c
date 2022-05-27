@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_in_out_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yst-laur <yst-laur@student.42quebec.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/27 12:23:43 by yst-laur          #+#    #+#             */
+/*   Updated: 2022/05/27 12:23:47 by yst-laur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "pipex_bonus.h"
 
-void    handle_in_out(char *argv[], t_data data)
+void	handle_in_out(char *argv[], t_data data)
 {
-    int	fd[2];
-	int i;
+	int	fd[2];
+	int	i;
 
-    i = -1;
+	i = -1;
 	fd[0] = open(argv[1], O_RDONLY);
 	if (fd[0] != -1)
 	{

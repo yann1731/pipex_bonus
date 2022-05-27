@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   gnl_bonus.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yst-laur <yst-laur@student.42quebec.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/27 12:20:24 by yst-laur          #+#    #+#             */
+/*   Updated: 2022/05/27 12:20:27 by yst-laur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "pipex_bonus.h"
 
 static int	total_str_len(char *s1, char *s2)
@@ -10,9 +21,9 @@ static int	total_str_len(char *s1, char *s2)
 	return (total_len);
 }
 
-static char *re_alloc(int c, size_t len, char *tofree)
+static char	*re_alloc(int c, size_t len, char *tofree)
 {
-	char *rstr;
+	char			*rstr;
 	size_t			cd;
 	unsigned char	cout;
 	unsigned char	*ptr;
@@ -36,9 +47,9 @@ static char	*strjoinfree(char *s1, char *s2)
 	char		*ns;
 
 	if (!s1)
-		return ft_strdup(s2);
+		return (ft_strdup(s2));
 	if (!s2)
-		return ft_strdup(s1);
+		return (ft_strdup(s1));
 	ns = malloc((total_str_len(s1, s2) + 1) * sizeof(char));
 	if (ns == NULL)
 		return (NULL);
@@ -48,7 +59,7 @@ static char	*strjoinfree(char *s1, char *s2)
 	return (ns);
 }
 
-char    *gnl(void)
+char	*gnl(void)
 {
 	char	*str;
 	char	*buf;

@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   run_bonus.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yst-laur <yst-laur@student.42quebec.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/27 13:00:41 by yst-laur          #+#    #+#             */
+/*   Updated: 2022/05/27 13:00:47 by yst-laur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "pipex_bonus.h"
 
 void	run(char *cmdpath, char **cmd, t_data data)
 {
-	char **env;
+	char	**env;
 
 	env = NULL;
 	execve(cmdpath, cmd, env);
@@ -12,4 +23,3 @@ void	run(char *cmdpath, char **cmd, t_data data)
 	freeall(data);
 	exit(1);
 }
-

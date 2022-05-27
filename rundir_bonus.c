@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rundir_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yst-laur <yst-laur@student.42quebec.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/27 13:09:54 by yst-laur          #+#    #+#             */
+/*   Updated: 2022/05/27 13:10:46 by yst-laur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "pipex_bonus.h"
 
 void	rundir(char *cmdpath, char **cmd, t_data data)
 {
-	int fd[2];
+	int	fd[2];
 
 	checkoutput(pipe(fd), data);
 	data.pid[++*data.i] = fork();
@@ -21,4 +32,3 @@ void	rundir(char *cmdpath, char **cmd, t_data data)
 		run(cmdpath, cmd, data);
 	}
 }
-
