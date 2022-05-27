@@ -22,12 +22,12 @@ NAME =		libft.a
 AR =		ar rc -s
 
 ${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
+			@${AR} ${NAME} ${OBJS}
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 all:		${NAME}
 clean:
-			${RM} ${OBJS} ${OBJSBONUS}
+			@${RM} ${OBJS} ${OBJSBONUS}
 fclean:		clean
-			${RM} ${NAME}
+			@${RM} ${NAME}
 re:			fclean all

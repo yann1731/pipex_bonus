@@ -15,8 +15,7 @@
 # include	<unistd.h>
 # include	<stdlib.h>
 # include	<stdarg.h>
-# define	BUFFER_SIZE 1
-# define	new mynew
+# define BUFFER_SIZE 1
 
 typedef struct s_flags
 {
@@ -135,7 +134,7 @@ void	printhexsharptwo(t_flags format, unsigned int nbr,
 int		validateflag(int c);
 void	printchar(int c, int *res);
 void	ft_putnbr_base(unsigned int n, char *base, int *res);
-char    *get_next_line(int fd);
+char	*get_next_line(int fd);
 char	*ft_strjoinfree(char *s1, char *s2);
 int		ft_strchrint(const char *s, int c);
 int		ft_strnstrint(const char *haystack, const char *needle, size_t len);
