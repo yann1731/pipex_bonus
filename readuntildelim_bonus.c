@@ -17,17 +17,17 @@ void	readuntildelim(char *delimiter, t_data data)
 	int		fd[2];
 
 	checkoutput(pipe(fd), data);
-	dup2(fd[1], STDOUT_FILENO);
-	close(fd[1]);
 	while (1)
 	{
-		ft_putstr_fd("pipe heredoc> ", STDERR_FILENO);
+		ft_putstr_fd("pipe heredoc> ", STDOUT_FILENO);
 		buf = gnl();
 		if (ft_strncmp(buf, delimiter, ft_strlen(buf)) == 0)
 			break ;
-		write(STDOUT_FILENO, buf, ft_strlen(buf));
+		write(fd[1], buf, ft_strlen(buf));
 		free(buf);
 	}
+	dup2(fd[1], STDOUT_FILENO);
+	close(fd[1]);
 	free(buf);
 	dup2(fd[0], STDIN_FILENO);
 	close(fd[0]);
