@@ -42,6 +42,9 @@ ${NAME}:	${OBJS} ${LIBFT}
 ${LIBFT}:
 			make -C ${LIBFTPATH} all
 
+asm:
+			${CC} -S ${SCRS_B}
+
 push:
 			git add *.c *.h Makefile
 			git commit -m "let's go"
@@ -53,6 +56,9 @@ clean:
 
 fclean:		clean
 			@${RM} ${NAME} ${LIBFTPATH}${LIBFT} ${OBJS} ${OBJS_B}
+
+cleanasm:
+			${RM} *.s
 
 re: clean all
 
