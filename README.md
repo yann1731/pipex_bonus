@@ -6,12 +6,10 @@ Pipes (Sorta like the ones Mario uses)
 
 This project was a great introduction to the world of pipes, fork and processes.
 
-It functions essentially like passing commands into bash. Example: ./pipex infile cat "wc -w" outfile would be equivalent to passing\
-"< input_file cat | wc -w > output_file" to bash.
+It functions essentially like passing commands into bash. Example: ./pipex infile cat "wc -w" outfile would be equivalent to passing "< input_file cat | wc -w > output_file" to bash.
 
 The mandatory part works with 2 commands while the bonus part works with 2 commands or more and also handles heredoc\
-in the form of ./pipex here_doc LIMITER cmd cmd1 output_file. When heredoc is used redirection to the output_file in treated like >> \
-instead of simply >
+in the form of ./pipex here_doc LIMITER cmd cmd1 output_file. When heredoc is used redirection to the output_file in treated like >> instead of simply >
 
 ## Getting Started
 
